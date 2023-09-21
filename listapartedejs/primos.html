@@ -1,0 +1,19 @@
+<script>
+  var n = parseInt(prompt("Quantos números você quer testar?"));
+  
+  for (var i = 1; i <= n; i++) {
+      var x = parseInt(prompt("Digite um número inteiro:"));
+      var primo = true;
+      for (var j = 2; j < x; j++) {
+          if (x % j === 0) {
+              primo = false;
+              break;
+          }
+      }
+      if (primo && x > 1) {
+          console.log(x + " é primo");
+      } else {
+          console.log(x + " não é primo");
+      }
+  }
+  </script>
