@@ -1,0 +1,14 @@
+<script>
+  var primeiroDado = 0;
+  var N ;
+  N=parseInt(prompt("escolha um numero"))
+  var contador = 0;
+  
+  for (var i = primeiroDado; i <= N; i++) {
+    if (i === Math.round(i)) {
+      contador++;
+    }
+  }
+  
+  document.write("Existem " + contador + " valores inteiros entre " + primeiroDado + " e " + N + ".");
+  </script>

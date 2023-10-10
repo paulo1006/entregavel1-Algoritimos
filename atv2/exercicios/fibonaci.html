@@ -1,0 +1,18 @@
+<script>var n = parseInt(prompt("Digite um quantos numeros vai querer entre 0 e 100"));
+
+  if (n > 100 && n < 0) {
+    document.write("O número deve ser maior que 0 e menor que 100.");
+  } else {
+    var str = "0 1";
+    var a = 0;
+    var b = 1;
+  
+    for(var i = 2; i < n; i++) {
+        var c = a + b;
+        str += " " + c;
+        a = b;
+        b = c;
+    }
+  
+    document.write(str);
+  }</script>

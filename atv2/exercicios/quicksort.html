@@ -1,0 +1,54 @@
+<script>
+    
+    function quicksort(arr) {
+    if (arr.length <= 1) {
+        return arr;
+    }
+
+    const pivot = arr[Math.floor(arr.length / 2)];
+    const esq = [];
+    const dir = [];
+    const eq = [];
+
+    for (let element of arr) {
+        if (element < pivot) {
+            esq.push(element);
+        } else if (element > pivot) {
+            dir.push(element);
+        } else {
+            eq.push(element);
+        }
+    }
+
+    return quicksort(esq).concat(eq, quicksort(dir));
+}
+
+function inserirValoresNoArray() {
+    const numElementos = parseInt(prompt("Quantos números deseja inserir no vetor?"));
+
+    if (!isNaN(numElementos) && numElementos > 0) {
+        const arr = [];
+        for (let i = 0; i < numElementos; i++) {
+            const valor = parseFloat(prompt(`Insira o valor ${i + 1}:`));
+            if (!isNaN(valor)) {
+                arr.push(valor);
+            } else {
+                alert("Por favor, insira um valor numérico válido.");
+                i--; 
+            }
+        }
+
+        if (arr.length > 0) {
+            const sortedArr = quicksort(arr);
+            document.write("Vetor original: " + arr.join(", ") + "<br>");
+            document.write("Vetor ordenado: " + sortedArr.join(", "));
+        } else {
+            alert("Nenhum valor inserido. O vetor está vazio.");
+        }
+    } else {
+        alert("Por favor, insira um número válido maior que zero para o tamanho do vetor.");
+    }
+}
+
+inserirValoresNoArray();
+  </script>
